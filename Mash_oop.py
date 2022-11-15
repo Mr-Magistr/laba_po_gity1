@@ -428,6 +428,14 @@ def test3():
     print('-----')
     deletes.close()
     saves.close()
+def calc():
+    cnt = 0
+    for i in range(len(a)):
+        q =str(a[i])
+        q=q.split(',')
+        if len(q[0]) > 1:
+            cnt+=1
+    print(cnt)
 
 def menufunc(b):
     if b==1:
@@ -446,6 +454,8 @@ def menufunc(b):
         return test2()
     if b==8:
         return test3()
+    if b==9:
+        return calc()
     else:
         print('Выход из диапазона')
         menuque = int(input('что нужно?\n'
@@ -492,6 +502,7 @@ while True:
                         '6.Test1\n'
                         '7.Test2\n'
                         '8.Test3\n'
+                        '9.сколько всего машин\n'
                         ))
     menufunc(menuque)
 
