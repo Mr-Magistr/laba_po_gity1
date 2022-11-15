@@ -41,7 +41,7 @@ class start():
     def pynkt1(self):
         def aboba():
             a.proverka=5
-            a.per1 = int(input("Что вы хотите сделать\n1)Добавить новую конфигурацию машинки\n2)Изменить какую-нибудь конфигурацию\n3)Завершить программу\n"))
+            a.per1 = int(input("Что вы хотите сделать\n1)Добавить новую конфигурацию машинки\n2)Изменить какую-нибудь конфигурацию\n3)Удалить конфигурацию\n4)Завершить программу\n"))
             start.proverkainf(b,a.per1) 
             if a.per1 == 1:
                 start.debil(b)
@@ -56,10 +56,21 @@ class start():
                 start.pynkt1(b)
             elif a.per1 == 2:
                 start.vibor(b)
-
-
-
             elif a.per1 == 3:
+                def ydolenie():
+                    start.dva2(b)
+                    chislo=int(input('Какую конфигурацию хотите удалить?'))
+                    if chislo <= (len(prikol)):
+                        del(prikol[chislo-1])
+                        print('Конфигурация удалена')
+                        start.zapis(b)
+                        aboba()
+                    else:
+                        print('Выбрано неверное число')
+                        ydolenie()
+                ydolenie()
+
+            elif a.per1 == 4:
                 print('Программа сломана')
             else:
                 #print('выбранноео число выходет за пределы допустимого')
